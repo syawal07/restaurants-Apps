@@ -1,0 +1,97 @@
+/* Media Query 1: min-width: 650px */
+@media screen and (min-width: 650px) {
+  .app-bar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
+  }
+ 
+  .app-bar .app-bar__brand h1 {
+    font-size: 1.5em;
+  }
+ 
+  .app-bar .app-bar__menu {
+    display: none;
+  }
+ 
+  .app-bar .app-bar__navigation {
+    position: static;
+    width: 100%;
+  }
+ 
+  .app-bar .app-bar__navigation ul li {
+    display: inline-block;
+  }
+ 
+  .app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+/* Media Query 2: max-width: 768px */
+@media screen and (max-width: 768px) {
+  .restaurants{
+    grid-template-columns: repeat(2,1fr);
+  }
+  main > .favContent > .latestFav > .favRestaurants{
+    grid-template-columns: repeat(2,1fr);
+  }
+  footer{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .inner_content{
+    padding: 32px 0p;
+  }
+  .detail_item > .content_detail > .detail_info{
+    column-count: 1;
+  }
+  .content{
+    padding: 32px 40px;
+  }
+  .city{
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  .rating{
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  .rating p{
+    padding: 0 10px;
+  }
+}
+
+/* Media Query 3: max-width: 576px */
+@media screen and (max-width: 576px) {
+  footer{
+    grid-template-columns: repeat(1,1fr);
+  }
+  main > .newFavContent > .newLatestFav > .favRestaurants{
+    grid-template-columns: repeat(1,1fr);
+  }
+  .restaurants{
+    grid-template-columns: repeat(1,1fr);
+  }
+  .detail_info{
+    column-count: none;
+    column-gap: 0;
+  }
+}
+
+/* Media Query 4: min-width: 768px */
+@media screen and (min-width: 768px) {
+  .app-bar .app-bar__brand h1 {
+    font-size: 1.5em;
+  }
+  .detail_item > .content_detail > .detail_info{
+    column-count: 2;
+    column-gap: 20px;
+  }
+  .detail_item > .content_detail > .detail_info > .new_column {
+    break-before: column;
+  }
+}
+
+

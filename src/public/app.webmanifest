@@ -1,0 +1,36 @@
+{
+  "start_url": "./index.html",
+  "name": "Kuliner Makassar - f050xb071",
+  "short_name": "Katalog Restoran",
+  "icons": [
+ {
+      "src": "/logo 16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose" : "any"
+    },
+
+     {
+      "src": "/logo32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose" : "any"
+    },
+
+    {
+      "src": "/logo192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose" : "any"
+    },
+    {
+      "src": "/logo512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose" : "any"
+    }
+  ],
+  "theme_color": "#232946",
+  "background_color": "#7E1717",
+  "display": "standalone"
+}

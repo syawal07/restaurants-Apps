@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Free catalogue restaurant for you" />
+    <meta name="theme-color" content="#232946" />
+
+    <link rel="apple-touch-icon" href="./logo.png" />
+    <link rel="icon" href="./logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="./app.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <title>Kuliner Makassar</title>
+  </head>
+  <body>
+    <a href="#maincontent" class="skip-link">skip To The Content?</a>
+    <header class="app-bar">
+      <div class="app-bar__menu">
+        <button id="hamburgerButton">☰</button>
+      </div>
+      <div class="app-bar__brand">
+        <h1>Kuliner Makassar</h1>
+      </div>
+      <nav id="navigationDrawer" class="app-bar__navigation">
+        <ul>
+          <li><a href="#/restaurant-list">Home</a></li>
+          <li><a href="#/like">Favorite</a></li>
+          <li>
+            <a
+              href="https://github.com/syawal07"
+              target="_blank"
+              rel="noreferrer"
+              >About Us</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <picture>
+      <source
+        media="(max-width: 600px)"
+        srcset="./hero/hero-image_2-mobile.jpg"
+        class="responsive lazyload"
+      />
+      <source
+        media="(min-width: 601px)"
+        srcset="./hero/hero-image_2-desktop.jpg"
+        class="responsive lazyload"
+      />
+      <img
+        src="./hero/hero-image_2-desktop.jpg"
+        alt=" "
+        class="responsive lazyload"
+        loading="lazy"
+      />
+    </picture>
+    <main id="mainContent" tabindex="0"></main>
+
+    <div class="footerTools">
+      <button id="subscribePushNotification" class="btn">
+        Subscribe Push Notification
+      </button>
+      <button id="unsubscribePushNotification" class="btn">
+        Unsubscribe Push Notification
+      </button>
+    </div>
+    <footer>
+      <p>
+        <!-- Menampilkan nama dengan warna ungu dan efek bayangan teks -->
+        Copyright © 2023 - Kuliner Makassar
+      </p>
+    </footer>
+    <div class="loading"></div>
+  </body>
+</html>

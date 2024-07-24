@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+img {
+  width: 100% !important;
+  height: 300px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+/* Mengatur tampilan dan posisi tombol "skip link" yang muncul di bagian atas halaman */
+.skip-link {
+   position: absolute;
+   background-color: #17b7bf;
+  top: -55px;
+  left: 0;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0px;
+}
+.hero {
+  width: 100%;
+}
+
+#hamburgerButton {
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+
+/*
+  AppBar
+*/
+
+.app-bar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  padding: 8px 16px;
+  top: 0;
+  background-color: #7E1717;  
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  position: sticky;
+}
+
+.app-bar .app-bar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+.app-bar .app-bar__brand {
+  display: flex;
+  align-items: center;
+  flex: 3;
+}
+
+.app-bar .app-bar__brand h1 {
+  font-size: 15px;
+  user-select: none;
+  color: #FFF3E2;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+}
+
+.app-bar .app-bar__navigation {
+  position: absolute;
+  flex: 1;
+  top: 50px;
+  left: -180px;
+  width: 160px;
+  transition: all 0.5s;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.app-bar .app-bar__navigation.open {
+  left: 0;
+  background-color: #080202;
+  text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  width: 300px;
+  height: 230px;
+  z-index: 1;
+  border-radius: 15px;
+  padding-bottom: 100px;
+  border: 2px solid white; /* Menambahkan garis tepi putih dengan ketebalan 2px */
+  overflow: hidden; /* Menghindari tampilan konten yang melebihi batas elemen */
+}
+
+.app-bar .app-bar__navigation.open ul {
+  margin-top: 30px; /* Memberikan sedikit jarak antara bagian atas dengan daftar menu */
+  padding: 0 20px; /* Memberikan padding pada daftar menu */
+}
+
+.app-bar .app-bar__navigation ul li {
+  margin-bottom: 10px; /* Memberikan jarak antara setiap item daftar menu */
+}
+
+.app-bar .app-bar__navigation ul li a {
+  display: block; /* Mengubah tampilan link menjadi blok agar bisa memenuhi lebar elemen */
+  text-decoration: none;
+  color: white;
+  padding: 12px 0; /* Memberikan padding pada link menu */
+  transition: background-color 0.3s ease; /* Efek transisi saat link dihover */
+  font-weight: bold;
+}
+
+.app-bar .app-bar__navigation ul li a:hover {
+  background-color: #F29727; /* Mengubah warna latar belakang saat link dihover */
+  color: black; /* Mengubah warna teks saat link dihover */
+  border-radius: 10px;
+}
+
+/*
+  Main Content
+*/
+
+main {
+  padding: 32px;
+  flex: 1;
+}
+
+main h2 {
+  color: #080202;
+  min-height: 44px;
+  min-width: 44px;
+  text-align: center;
+  font-size: 30px;
+}
+
+main p {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.newFavContent {
+  padding:  20px; /* Mengatur padding untuk konten favorit baru */
+}
+
+.newLatestFav {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center; /* Mengatur lebar, margin atas, margin bawah, dan align teks pada konten favorit terbaru */
+}
+
+.newLatestFav h1 {
+  font-weight: 700;
+  font-size: 2em;
+  margin-bottom: 50px; /* Mengatur gaya teks judul favorit terbaru */
+}
+
+.restaurantIsEmpty{
+  margin: 40px auto auto;
+  justify-content: center;
+  display: grid;
+  grid-row-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px; /* Mengatur tata letak dan jarak antar elemen dalam grid restoran favorit baru */
+  color: #CD1818;
+}
+
+
+
+/*
+  restaurants
+*/
+
+/* Mengatur tampilan dan tata letak daftar restoran */
+.restaurants {
+	margin: 40px auto;
+	text-align: left;
+	display: grid;
+	grid-row-gap: 20px;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 20px;
+  color: #FFF4F4;
+}
+/*
+  restaurant Item
+*/
+
+.restaurant-item {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	position: relative;
+  border-radius: 20px;
+  background-color: #7E1717;
+  width: 100%;
+  transition: top ease 0.5s;
+  cursor: pointer;
+}
+
+.restaurant-item__header {
+  position: relative;
+}
+
+.restaurant-item .restaurant-item__header .restaurant-item__header__poster {
+  max-width: 100%;
+}
+
+.restaurant-item .restaurant-item__header .restaurant-item__header__rating {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #F29727;
+  color: black;
+  padding: auto 10px;
+  font-weight: 500;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.restaurant-item .restaurant-item__header .restaurant-item__header__rating .restaurant-item__header__rating__score {
+  color:#080202;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 0 0 5px;
+  padding: 2px 3px 2px 3px;
+  position: absolute;
+	top: 10px;
+  right: -10px;
+	border-radius: 5px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+   min-width: 44px;
+  min-height: 44px;
+}
+
+.restaurant-item .restaurant-item__content {
+  padding: 16px;
+}
+
+.restaurant-item .restaurant-item__content h3 {
+  margin: 0 0 10px 0;
+  font-size: 35px;
+}
+
+.restaurant-item .restaurant-item__content h3 a {
+  color: #FFF4F4;
+  text-decoration: none;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 30px;
+  display: inline-block;
+  padding: 10px;
+}
+
+.restaurant-item .restaurant-item__content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; 
+  -webkit-box-orient: vertical;
+  min-width: 50px;
+  min-height: 50px;
+  color: #FFF4F4;
+}
+
+/*
+  Restaurant
+*/
+
+.restaurant {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.restaurant .restaurant__poster {
+  width: 100%;
+  max-width: 400px;
+}
+
+.restaurant .restaurant__info h4 {
+  margin: 8px 0;
+}
+
+/*
+  Footer
+*/
+
+footer{
+	background-color: #7E1717;
+	color: white;
+	font-size: 18px;
+	padding: 16px;
+	width: 100%;
+	text-align: center;
+   position: relative;
+  bottom: 0;
+  font-weight: bold;
+}
+
+.footerTools {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 50%;
+  margin: 0 auto; /* Untuk memposisikan di tengah secara horizontal */
+  font-weight: bold;
+}
+
+
+
+footer p a {
+  color: #FFF4F4;
+  text-decoration: none;
+}
+
+/*
+  Like
+*/
+
+.like {
+  font-size: 18px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #7E1717;
+  color: black;
+  border: 5px;
+  border-radius: 70%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  Button
+*/
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #F29727;
+  border: 1px solid var(--button);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+  touch-action: manipulation;
+  touch-action: none;
+  min-width: 44px;
+  min-height: 44px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #7E1717;
+  color: #FFF4F4;
+}
+
+.btn:active {
+  background-color: #ffffffbb;
+}
+
+.btn:focus-visible {
+  outline: 3px solid #00000055;
+}
+
+.resto-city {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  background-color: #F29727;
+  padding: 10px;
+  color: black;
+  font-weight: 500;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-block;
+}
+
+
+
+
+.restaurant__info {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+}
+
+.restaurant__info h3,
+.restaurant__info h4 {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.restaurant__info p {
+  margin-bottom: 10px;
+}
+
+.restaurant__info img {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.restaurant__info .customer-review {
+  margin-top: 20px;
+}
+
+.restaurant__info .customer-review p {
+  margin-bottom: 5px;
+}
+
